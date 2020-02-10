@@ -1,0 +1,84 @@
+﻿@model AloStorPerdeYikama_v2.Models.Slayder
+
+@{
+    ViewBag.Title = "Slayder Güncelleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <h4 class="card-title">Kayıt Güncelleme</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Slayder</h4>
+                        <hr />
+
+
+                        @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.ID)
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SliderFoto, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @if (Model.SliderFoto == null)
+                                    {
+                                        <img style="width:100px;height:100px; border:solid 1px #cccccc; " src="~/Content/img/storperde.jpg" alt="resim yok" />
+                                    }
+                                    else
+                                    {
+                                        <img src="data:image/png;base64,@System.Convert.ToBase64String(Model.SliderFoto)" style="height:100px; width:100px;" />
+                                    }
+
+                                </div>
+                            </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.SliderFoto, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        <input type="file" id="file" name="file" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.SliderText, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.SliderText, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.SliderText, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.SliderSubText, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.SliderSubText, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.SliderSubText, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Kaydet" class="btn btn-default" />
+                                        @Html.ActionLink("Geri Dön", "MySlayder")
+                                    </div>
+                                </div>
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

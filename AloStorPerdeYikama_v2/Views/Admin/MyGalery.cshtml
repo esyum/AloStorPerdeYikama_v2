@@ -1,0 +1,85 @@
+﻿@using AloStorPerdeYikama_v2.Models
+@model IEnumerable<Galery>
+@{
+    ViewBag.Title = "MyGalery";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="content">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <h4 class="card-title">Galeri Listesi</h4>
+                            <button class="btn btn-primary btn-round ml-auto" onclick="location.href='@Url.Action("Galery_Create", "Admin")'" data-toggle="modal" data-target="#addRowModal">
+                                <i class="fa fa-plus"></i>
+                                Yeni Kayıt
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="table-responsive table-bordered">
+                            <table id="add-row" class="display table table-striped table-hover table-bordered mt--2">
+                                <thead>
+                                    <tr>
+                                        <th>Resim</th>
+                                        <th>Grup</th>
+                                        <th>Title</th>
+                                        <th>Başlık</th>
+                                        <th>Alt Başlık</th>
+                                        <th>Tarih</th>
+                                        <th style="width: 10%"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="text-center">
+                                                @if (item.galery_pic == null)
+                                                {
+                                                    <img src="~/assets/img/blogpost.jpg" alt="resim yüklenemedi" height=100 width=100 />
+                                                }
+                                                else
+                                                {
+                                                    <img src="data:image/png;base64,@System.Convert.ToBase64String(item.galery_pic)" style="height:100px; width:100px;" />
+                                                }
+
+                                            </td>
+                                            <td>@item.filter_name</td>
+                                            <td>@item.title</td>
+                                            <td>@item.baslik</td>
+                                            <td>@item.alt_baslik</td>
+                                            <td>@item.OlusturmaTarihi</td>
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <button type="button" onclick="location.href='@Url.Action("Galery_Edit", "Admin",new { id=item.ID})'" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Düzenle">
+                                                        <i class="fa fa-edit"></i>
+                                                    </button>
+
+                                                    <button type="button" onclick="location.href='@Url.Action("Galery_Delete", "Admin", new { id=item.ID})'" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Sil">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,378 @@
+﻿@model AloStorPerdeYikama_v2.Controllers.AnaSayfaDTO
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="hero-area">
+    <div class="hero-post-slides owl-carousel">
+        <!-- Single Hero Post -->
+
+        @foreach (var slayt in Model.DTO_slider)
+        {
+            <div class="single-hero-post bg-overlay">
+                <!-- Post Image -->
+                <div class="slide-img bg-img" style="background-image: url('data:image/png;base64,@System.Convert.ToBase64String(slayt.SliderFoto)');"></div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <!-- Post Content -->
+                            <div class="hero-slides-content text-center">
+                                <h2>@slayt.SliderText</h2>
+                                <p>@slayt.SliderSubText</p>
+                                <div class="welcome-btn-group">
+                                    <a href="/About" class="btn alazea-btn mr-30">HAKKIMIZDA</a>
+                                    <a href="/Contact" class="btn alazea-btn active">İLETİŞİM</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- ##### Hizmetlerimiz ##### -->
+
+<section class="our-services-area bg-gray section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Heading -->
+                <div class="section-heading text-center">
+                    <h2>HİZMETLERİMİZ</h2>
+                    <p>İddalıyız..En kaliteli hizmeti en uygun fiyata sunuyoruz.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-between">
+            <div class="col-12 col-lg-12">
+                <div class="alazea-service-area mb-100">
+
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-2">
+                                <img src="./Content/img/bg-img/19-1.jpeg" style="height:100%" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-10">
+                                <div class="card-body">
+                                    <h5 class="card-title">STOR PERDE YIKAMA</h5>
+                                    <p class="card-text">Stor perde yıkama için özel ve temiz su ile yıkama işlemi yapılmaktadır yine yıkama tesislerimizde kurutma odalarında muhafaza edilmektedir kurutma işleminden sonra paketlenip profesyonel ekiplerimiz tarafında stor perdeleriniz yerine ücretsiz olarak monte edlilir...</p>
+                                    <button type="button" class="btn btn-outline-primary pull-right mb-3" data-toggle="modal" data-target="#exampleModal">Devamı...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+
+                            <div class="col-md-10">
+                                <div class="card-body">
+                                    <h5 class="card-title">ZEBRA PERDE YIKAMA</h5>
+                                    <p class="card-text">Zebra Perde Yıkama da, Siz değerli müşterilerimiz bize ulaştıktan sona Profesyonel ekibimiz adresinizden Perdelerinizi kendileri söker daha sonra Markalama işlemi yapılır. Stor Perdeleriniz 1 gece kolada bekletildikten sonra kolalanmış perdeleriniz ekiplerimiz tarafından kapalı alanda bol su ile yıkanır...</p>
+                                    <button type="button" class="btn btn-outline-primary pull-left mb-3">Devamı...</button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="./Content/img/bg-img/16-1.jpeg" style="height:100%" class="card-img" alt="...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                            <div class="col-md-2">
+                                <img src="./Content/img/bg-img/21-1.jpeg" style="height:100%" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-10">
+                                <div class="card-body">
+                                    <h5 class="card-title">TÜL PERDE YIKAMA</h5>
+                                    <p class="card-text">Tül perde yıkama için özel ve temiz su ile yıkama işlemi yapılmaktadır yine yıkama tesislerimizde kurutma odalarında muhafaza edilmektedir kurutma işleminden sonra paketlenip profesyonel ekiplerimiz tarafında tül perdeleriniz yerine ücretsiz olarak monte edlilir Zümrüt perde yıkamaya danışmadan...</p>
+                                    <button type="button" class="btn btn-outline-primary pull-right mb-3" data-toggle="modal" data-target="#exampleModal">Devamı...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        @*@foreach (var item in Model.DTO_Hizmet_Turu)
+            {
+                <div class="col-md-2">
+                    <img src="data:image/png;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:100%" class="card-img" alt="...">
+                </div>
+                <div class="col-md-10">
+                    <div class="card-body">
+
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text">@item.TitleSub</p>
+                        <button type="button" class="btn btn-outline-primary pull-right mb-3">Devamı...</button>
+
+                        @Bootstrap.ModalPopup_Enes(id: "myModal2", title: item.Title)
+
+                    </div>
+                </div>
+            }*@
+
+
+
+        <!-- Button trigger modal -->
+        @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Launch demo modal
+            </button>*@
+
+        @*@Bootstrap.ModalPopup_Enes(id: "myModal2", title: "Modal Title 2")*@
+
+        @*<div class="col-12 col-lg-4">
+            <div class="alazea-video-area bg-overlay mb-100">
+                <img src="./Content/img/bg-img/23-3.jpg" alt="">
+                <a href="http://www.youtube.com/watch?v=7HKoqNJtMTQ" class="video-icon">*@
+        <!-- link düzenlenecek -->
+        @*<i class="fa fa-play" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+
+</section>
+
+<!-- ##### Service Area End ##### -->
+<!-- ##### Portfolio Area Start ##### -->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <!-- Section Heading -->
+            <div class="section-heading text-center">
+                <h2>NELER YAPTIK?</h2>
+                <p>Tecrübe ve bilgi birimimiz ile hizmetinizdeyiz.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="alazea-portfolio-filter">
+                <div class="portfolio-filter">
+                    <button class="btn active" data-filter="*">Hepsi</button>
+                    <button class="btn" data-filter=".temiz">Yıkanmış Ürünler</button>
+                    <button class="btn" data-filter=".kiyas">Karşılaştırma</button>
+                    <button class="btn" data-filter=".ev">Ev Hizmetleri</button>
+                    <button class="btn" data-filter=".is">Ofis Hizmetleri</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row alazea-portfolio">
+        <!-- Single Portfolio Area -->
+
+        @foreach (var item in Model.DTO_galery)
+            {
+            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item @item.filter_name wow fadeInUp" data-wow-delay="100ms">
+                <!-- Portfolio Thumbnail -->
+                <div class="portfolio-thumbnail bg-img" style="background-image: url('data:image/png;base64,@System.Convert.ToBase64String(item.galery_pic)');"></div>
+                <!-- Portfolio Hover Text -->
+                <div class="portfolio-hover-overlay">
+                    <a href="data:image/png;base64,@System.Convert.ToBase64String(item.galery_pic)" class="portfolio-img d-flex align-items-center justify-content-center" title=@item.title>
+                        <div class="port-hover-text">
+                            <h3>@item.baslik</h3>
+                            <h5>@item.alt_baslik</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+<!-- ##### Portfolio Area End ##### -->
+<!-- ##### Müşteri yorumları ##### -->
+<section class="testimonial-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="testimonials-slides owl-carousel">
+                    <!-- Single Testimonial Slide -->
+                    <div class="single-testimonial-slide">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-6">
+                                <div class="testimonial-thumb">
+                                    <img src="./Content/img/bg-img/13-1.jpeg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="testimonial-content">
+                                    <!-- Section Heading -->
+                                    <div class="section-heading">
+                                        <h2>MEMNUNİYETİNİZ, MEMNUNİYETİMİZDİR.</h2>
+                                        <p>Teşekkürler</p>
+                                    </div>
+                                    <p>
+                                        "Kahve lekesi dökülmüştü, İstanbul Detay
+                                        Stor Perde ile perdelerimiz ilk günkü gibi
+                                        oldu. Çok teşekkürler.
+                                        "
+                                    </p>
+                                    <div class="testimonial-author-info">
+                                        <h6>Ahmet D.</h6>
+                                        <p>Cafe Köşe İşl. Müd.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Testimonial Slide -->
+                    <div class="single-testimonial-slide">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-6">
+                                <div class="testimonial-thumb">
+                                    <img src="./Content/img/bg-img/53-1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="testimonial-content">
+                                    <!-- Section Heading -->
+                                    <div class="section-heading">
+                                        <h2>TEMİZ PERDE, AYDINLIK İÇ ORTAM</h2>
+                                        <p>Perdelerimiz tertemiz.</p>
+                                    </div>
+                                    <p>
+                                        “Perdelerimizi nasıl yıkatacağız diye
+                                        düşünüyorduk, bir arkadaşımızın tavsiyesi
+                                        sonucu İstanbul Detay Stor Perde'ye ulaştık.
+                                        Sonuçtan çok memnun kaldık. Tertemiz elimize
+                                        ulaştı perdelerimiz. İyi ki sizi tercih etmişim."
+                                    </p>
+                                    <div class="testimonial-author-info">
+                                        <h6>Meryem G.</h6>
+                                        <p>Ev Hanımı</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Testimonial Slide -->
+                    <div class="single-testimonial-slide">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-6">
+                                <div class="testimonial-thumb">
+                                    <img src="./Content/img/bg-img/15-1.jpeg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="testimonial-content">
+                                    <!-- Section Heading -->
+                                    <div class="section-heading">
+                                        <h2>HIZLI VE GÜVENİLİR HİZMET</h2>
+                                        <p>Teslimat tam zamanında.</p>
+                                    </div>
+                                    <p>
+                                        “Stor perde parçalarımızda eksiklikler ve
+                                        tamirat gereği vardı. Neyseki İstanbul Detay
+                                        Stor Perde'ye ulaştık. Uygun fiyata hızlı ve
+                                        kaliteli hizmeti almış olduk. Teşekkür ederim!”
+                                    </p>
+                                    <div class="testimonial-author-info">
+                                        <h6>Ali F.</h6>
+                                        <p>Döneristan Restaurant Müd.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Müşteri yorumları ##### -->
+<!-- ##### İletişim ##### -->
+<section class="contact-area bg-gray section-padding-100-0">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-12 col-lg-5">
+                <!-- Section Heading -->
+                <div class="section-heading">
+                    <h2>HEMEN SİPARİŞİNİZİ VERİN</h2>
+                    <p>Mesajınız iletin, müşteri temsilcimiz sizi arasın.</p>
+                </div>
+                <!-- Contact Form Area -->
+                <div class="contact-form-area mb-100">
+                    <form action="#" method="post">
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="contact-name" placeholder="Adınız">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="contact-email" placeholder="Email Adresiniz">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="contact-subject" placeholder="Konu">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Mesaj"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn alazea-btn mt-15">GÖNDER</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <!-- Google Maps -->
+                <div class="map-area mb-100">
+                    @*   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.179165086162!2d29.001578315719065!3d41.02133602656952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAxJzE2LjgiTiAyOcKwMDAnMTMuNiJF!5e0!3m2!1str!2str!4v1579725696064!5m2!1str!2str" allowfullscreen></iframe>*@
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d266.12866421849094!2d28.67220686187549!3d41.00551528289827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55f7fcf2d279b%3A0xbe8a6b4d8162d8f3!2sPerdeci!5e0!3m2!1str!2str!4v1580905847328!5m2!1str!2str" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ##### Contact Area End ##### -->
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
