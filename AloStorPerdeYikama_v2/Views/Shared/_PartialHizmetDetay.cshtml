@@ -1,9 +1,23 @@
-﻿@*@model AloStorPerdeYikama_v2.Models.HizmetTuru*@
+﻿@model List<AloStorPerdeYikama_v2.Models.HizmetTuru>
 
-<div class="media">
-    <img class="mr-3" src="..." alt="Generic placeholder image">
-    <div class="media-body">
-        <h5 class="mt-0">Media heading</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+@foreach (var item in Model)
+{
+    <div class="media">
+        @if (item.fotograf == null)
+        {
+            <img class="mr-3" src="./Content/img/bg-img/1-1.jpg" style="height:100px;width:100px;" />
+        }
+        else
+        {
+            <img src="data:image/png;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:100%" class="card-img" alt="hizmet türleri">
+        }
+
+        @*<img class="mr-3" src="..." alt="Generic placeholder image">*@
+
+        <div class="media-body">
+            <h5 class="mt-0">@item.Title</h5>
+            @item.TitleSub
+        </div>
     </div>
-</div>
+}

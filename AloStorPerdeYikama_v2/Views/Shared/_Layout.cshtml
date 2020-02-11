@@ -198,15 +198,16 @@
     <script src="~/scripts/animate.js"></script>
     <script src="~/scripts/custom.js"></script>
 
-
     <script>
         $(function () {
-            $('#exampleModal').on('show.bs.modal', function (e) {
-                console.log('test');
+            $('#denemehkn').on('show.bs.modal', function (e) {
+                var btn = $(e.relatedTarget);
+                var aciklama = btn.data("hizmet-id")
+                $("#denemehkn_body").load("/Home/HizmetTurleri/" + aciklama);
             })
-
         });
-        
+
     </script>
+
 </body>
 </html>

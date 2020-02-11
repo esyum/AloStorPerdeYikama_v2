@@ -21,7 +21,6 @@ namespace AloStorPerdeYikama_v2.Models
         public string Title { get; set; }
 
         [Display(Name = "Gövde Metni")]
-        [StringLength(400)]
         public string TitleSub { get; set; }
 
         [Display(Name = "Tarih")]

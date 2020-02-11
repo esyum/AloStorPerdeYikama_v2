@@ -294,5 +294,137 @@ namespace AloStorPerdeYikama_v2.Controllers
 
         }
 
+        //HİZMETLERİMİZ
+
+        public ActionResult MyHizmet()
+        {
+            List<HizmetTuru> _hizmet = db.hizmet_turu.OrderByDescending(x => x.OlusturmaTarihi).ToList();
+            return View(_hizmet);
+        }
+
+        public ActionResult HizmetTuru_Create()
+        {
+            return View();
+        }
+
+        // POST: Admin/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult HizmetTuru_Create(HizmetTuru s, HttpPostedFileBase file)
+        {
+            try
+            {
+                HizmetTuru _hizmet = new HizmetTuru();
+                if (file != null && file.ContentLength > 0)
+                {
+                    MemoryStream memoryStream = file.InputStream as MemoryStream;
+                    if (memoryStream == null)
+                    {
+                        memoryStream = new MemoryStream();
+                        file.InputStream.CopyTo(memoryStream);
+                    }
+                    _hizmet.fotograf = memoryStream.ToArray();
+
+                    _hizmet.Title = s.Title;
+                    _hizmet.TitleSub = s.TitleSub;
+                    _hizmet.OlusturmaTarihi = DateTime.Now;
+
+                    db.hizmet_turu.Add(_hizmet);
+                    db.SaveChanges();
+
+                    return RedirectToAction("MyHizmet", "Admin");
+
+                }
+
+                return View(s);
+
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Hata oluştu");
+            }
+        }
+
+        public ActionResult HizmetTuru_Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            HizmetTuru _hizmet = db.hizmet_turu.Find(id);
+            if (_hizmet == null)
+            {
+                return HttpNotFound();
+            }
+            return View(_hizmet);
+        }
+
+        [HttpPost, ActionName("HizmetTuru_Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed_HizmetTuru(int id)
+        {
+            HizmetTuru _hizmet = db.hizmet_turu.Find(id);
+            db.hizmet_turu.Remove(_hizmet);
+            db.SaveChanges();
+            return RedirectToAction("MyHizmet");
+        }
+
+        // GET: Admin/Edit/5
+        public ActionResult HizmetTuru_Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            HizmetTuru _hizmet = db.hizmet_turu.Find(id);
+            if (_hizmet == null)
+            {
+                return HttpNotFound();
+            }
+            return View(_hizmet);
+        }
+
+        // POST: Admin/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult HizmetTuru_Edit(HizmetTuru s, HttpPostedFileBase file)
+        {
+            try
+            {
+                HizmetTuru _hizmet = new HizmetTuru();
+                if (file != null && file.ContentLength > 0)
+                {
+                    MemoryStream memoryStream = file.InputStream as MemoryStream;
+                    if (memoryStream == null)
+                    {
+                        memoryStream = new MemoryStream();
+                        file.InputStream.CopyTo(memoryStream);
+                    }
+                    _hizmet.fotograf = memoryStream.ToArray();
+                }
+
+                _hizmet.ID = s.ID;
+                _hizmet.Title = s.Title;
+                _hizmet.TitleSub = s.TitleSub;
+                _hizmet.OlusturmaTarihi = DateTime.Now;
+
+                db.Entry(_hizmet).State = EntityState.Modified;
+
+                if (file == null)
+                    db.Entry(_hizmet).Property(m => m.fotograf).IsModified = false;
+                db.SaveChanges();
+
+                return RedirectToAction("MyHizmet", "Admin");
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Hata oluştu");
+            }
+
+        }
     }
 }
