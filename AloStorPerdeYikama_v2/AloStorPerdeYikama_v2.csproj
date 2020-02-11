@@ -505,22 +505,22 @@
     <Content Include="assets\js\plugin\webfont\webfont.min.js" />
     <Content Include="assets\js\setting-demo.js" />
     <Content Include="assets\js\setting-demo2.js" />
-    <Content Include="Content\css\bootstrap-grid.css" />
-    <Content Include="Content\css\bootstrap-grid.min.css" />
-    <Content Include="Content\css\bootstrap-reboot.css" />
-    <Content Include="Content\css\bootstrap-reboot.min.css" />
-    <Content Include="Content\css\bootstrap.css" />
-    <Content Include="Content\css\bootstrap.min.css" />
-    <Content Include="Content\css\classy-nav.css" />
-    <Content Include="Content\css\elegant-icon.css" />
-    <Content Include="Content\css\font-awesome.min.css" />
-    <Content Include="Content\css\magnific-popup.css" />
-    <Content Include="Content\css\main.css" />
-    <Content Include="Content\css\owl.carousel.min.css" />
-    <Content Include="Content\css\style.css" />
-    <Content Include="fonts\classy.svg" />
-    <Content Include="fonts\ElegantIcons.svg" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\classy-nav.css" />
+    <Content Include="Content\elegant-icon.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\magnific-popup.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\owl.carousel.min.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\fonts\classy.svg" />
+    <Content Include="Content\fonts\ElegantIcons.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\img\bg-img\1-1.jpg" />
     <Content Include="Content\img\bg-img\13-1.jpeg" />
     <Content Include="Content\img\bg-img\13.jpg" />
@@ -580,11 +580,12 @@
     <Content Include="Content\img\core-img\s3.png" />
     <Content Include="Content\img\storperde.jpg" />
     <Content Include="Content\video\yikama.mp4" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\active.js" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\animate.css" />
     <Content Include="scripts\animate.js" />
     <Content Include="scripts\bootstrap.bundle.js" />
     <Content Include="scripts\bootstrap.bundle.min.js" />
@@ -603,23 +604,23 @@
     <Content Include="scripts\bootstrap.js.map" />
     <Content Include="scripts\bootstrap.bundle.min.js.map" />
     <Content Include="scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\css\bootstrap.min.css.map" />
-    <Content Include="Content\css\bootstrap.css.map" />
-    <Content Include="Content\css\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\css\bootstrap-reboot.css.map" />
-    <Content Include="Content\css\bootstrap-grid.min.css.map" />
-    <Content Include="Content\css\bootstrap-grid.css.map" />
-    <Content Include="fonts\classy.eot" />
-    <Content Include="fonts\classy.ttf" />
-    <Content Include="fonts\classy.woff" />
-    <Content Include="fonts\ElegantIcons.eot" />
-    <Content Include="fonts\ElegantIcons.ttf" />
-    <Content Include="fonts\ElegantIcons.woff" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\fonts\classy.eot" />
+    <Content Include="Content\fonts\classy.ttf" />
+    <Content Include="Content\fonts\classy.woff" />
+    <Content Include="Content\fonts\ElegantIcons.eot" />
+    <Content Include="Content\fonts\ElegantIcons.ttf" />
+    <Content Include="Content\fonts\ElegantIcons.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="assets\css\atlantis.css.map" />
     <Content Include="assets\fonts\flaticon\Flaticon.eot" />
     <Content Include="assets\fonts\flaticon\Flaticon.ttf" />
@@ -692,6 +693,10 @@
     <Content Include="assets\sass\atlantis\_responsive.scss" />
     <Content Include="assets\sass\atlantis\_typography.scss" />
     <Content Include="assets\sass\atlantis\_variables.scss" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Code\Bootstrap.cshtml" />
     <None Include="scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="scripts\jquery-3.4.1.js" />
     <Content Include="scripts\jquery-3.4.1.min.js" />
@@ -822,6 +827,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Shared\_PartialHizmetDetay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -831,6 +837,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\css\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
