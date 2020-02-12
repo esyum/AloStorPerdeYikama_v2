@@ -580,6 +580,7 @@
     <Content Include="Content\img\core-img\s3.png" />
     <Content Include="Content\img\storperde.jpg" />
     <Content Include="Content\video\yikama.mp4" />
+    <Content Include="deneme.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\active.js" />
