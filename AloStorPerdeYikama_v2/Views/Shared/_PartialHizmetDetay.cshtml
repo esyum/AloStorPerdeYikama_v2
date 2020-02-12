@@ -3,21 +3,22 @@
 
 @foreach (var item in Model)
 {
-    <div class="media">
-        @if (item.fotograf == null)
-        {
-            <img class="mr-3" src="./Content/img/bg-img/1-1.jpg" style="height:100px;width:100px;" />
-        }
-        else
-        {
-            <img src="data:image/png;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:100%" class="card-img" alt="hizmet türleri">
-        }
+    <div>
+        <div class="media">
+           
+            @if (item.fotograf == null)
+            {
+                <img class="mr-3" src="./Content/img/bg-img/1-1.jpg" style="height:100px;width:100px;" />
+            }
+            else
+            {
+                <img class="mr-3" src="data:image/png;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:100px;width:100px;" alt="hizmet türleri">
+            }
 
-        @*<img class="mr-3" src="..." alt="Generic placeholder image">*@
-
-        <div class="media-body">
-            <h5 class="mt-0">@item.Title</h5>
-            @item.TitleSub
+            <div class="media-body">
+                <h5 class="mt-0">@item.Title</h5>
+                @item.TitleSub
+            </div>
         </div>
     </div>
 }

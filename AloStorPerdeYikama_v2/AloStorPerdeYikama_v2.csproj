@@ -832,6 +832,7 @@
     <Content Include="Views\Admin\MyHizmet.cshtml" />
     <Content Include="Views\Admin\HizmetTuru_Delete.cshtml" />
     <Content Include="Views\Admin\HizmetTuru_Edit.cshtml" />
+    <Content Include="Views\Shared\_PartialCategory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

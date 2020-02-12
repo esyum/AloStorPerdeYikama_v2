@@ -5,31 +5,34 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<!-- ##### Slayder ##### -->
+
+
 <section class="hero-area">
     <div class="hero-post-slides owl-carousel">
         <!-- Single Hero Post -->
 
         @foreach (var slayt in Model.DTO_slider)
         {
-            <div class="single-hero-post bg-overlay">
-                <!-- Post Image -->
-                <div class="slide-img bg-img" style="background-image: url('data:image/png;base64,@System.Convert.ToBase64String(slayt.SliderFoto)');"></div>
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12">
-                            <!-- Post Content -->
-                            <div class="hero-slides-content text-center">
-                                <h2>@slayt.SliderText</h2>
-                                <p>@slayt.SliderSubText</p>
-                                <div class="welcome-btn-group">
-                                    <a href="/About" class="btn alazea-btn mr-30">HAKKIMIZDA</a>
-                                    <a href="/Contact" class="btn alazea-btn active">İLETİŞİM</a>
-                                </div>
+        <div class="single-hero-post bg-overlay">
+            <!-- Post Image -->
+            <div class="slide-img bg-img" style="background-image: url('data:image/png;base64,@System.Convert.ToBase64String(slayt.SliderFoto)');"></div>
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <!-- Post Content -->
+                        <div class="hero-slides-content text-center">
+                            <h2>@slayt.SliderText</h2>
+                            <p>@slayt.SliderSubText</p>
+                            <div class="welcome-btn-group">
+                                <a href="/About" class="btn alazea-btn mr-30">HAKKIMIZDA</a>
+                                <a href="/Contact" class="btn alazea-btn active">İLETİŞİM</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         }
     </div>
 </section>
@@ -58,19 +61,30 @@
                             <div class="col-md-2">
                                 @if (item.fotograf == null)
                                 {
-                                <img src="./Content/img/bg-img/1-1.jpg" style="height:200px;width:200px;" />
+                                    <img src="./Content/img/bg-img/1-1.jpg" style="height:200px;width:200px;" />
                                 }
                                 else
                                 {
-                                <img src="data:image/png;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:100%" class="card-img" alt="hizmet türleri">
+                                    <img src="data:image/png;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:100%" class="card-img" alt="hizmet türleri">
                                 }
                             </div>
 
                             <div class="col-md-10">
                                 <div class="card-body">
                                     <h5 class="card-title">@item.Title</h5>
-                                    <p class="card-text">@item.TitleSub</p>
-                                    <button type="button" class="btn btn-outline-primary pull-right mb-3" data-toggle="modal" data-target="#denemehkn" data-hizmet-id="@item.ID">Devamı...</button>
+
+                                    @if (string.IsNullOrEmpty(item.TitleSub) == false && item.TitleSub.Length > 280)
+                                    {
+                                        <p class="card-text">@(item.TitleSub.Substring(0, 280) )</p>
+
+                                        <button type="button" class="btn btn-outline-primary pull-right mb-3" data-toggle="modal" data-target="#denemehkn" data-hizmet-id="@item.ID">Devamı...</button>
+                                    }
+                                    else
+                                    {
+                                        <p class="card-text">@item.TitleSub</p>
+                                    }
+                                    
+
                                 </div>
                             </div>
                         </div>
@@ -83,6 +97,8 @@
 
 
 </section>
+
+
 
 <!-- ##### Service Area End ##### -->
 <!-- ##### Portfolio Area Start ##### -->
@@ -97,18 +113,21 @@
         </div>
     </div>
 </div>
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12">
-            <div class="alazea-portfolio-filter">
-                <div class="portfolio-filter">
-                    <button class="btn active" data-filter="*">Hepsi</button>
-                    <button class="btn" data-filter=".temiz">Yıkanmış Ürünler</button>
-                    <button class="btn" data-filter=".kiyas">Karşılaştırma</button>
-                    <button class="btn" data-filter=".ev">Ev Hizmetleri</button>
-                    <button class="btn" data-filter=".is">Ofis Hizmetleri</button>
-                </div>
-            </div>
+        <div class="col-12 text-center">
+            @Html.Action("GaleryTurleri", "Home")
+
+            @*<div class="alazea-portfolio-filter">
+                    <div class="portfolio-filter">
+                        <button class="btn active" data-filter="*">Hepsi</button>
+                        <button class="btn" data-filter=".temiz">Yıkanmış Ürünler</button>
+                        <button class="btn" data-filter=".kiyas">Karşılaştırma</button>
+                        <button class="btn" data-filter=".ev">Ev Hizmetleri</button>
+                        <button class="btn" data-filter=".is">Ofis Hizmetleri</button>
+                    </div>
+                </div>*@
         </div>
     </div>
     <div class="row alazea-portfolio">
@@ -136,7 +155,7 @@
 
 <!-- ##### Portfolio Area End ##### -->
 <!-- ##### Müşteri yorumları ##### -->
-<section class="testimonial-area section-padding-100">
+@*<section class="testimonial-area section-padding-100">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -233,7 +252,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>*@
 <!-- ##### Müşteri yorumları ##### -->
 <!-- ##### İletişim ##### -->
 <section class="contact-area bg-gray section-padding-100-0">

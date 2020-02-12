@@ -1,0 +1,43 @@
+﻿@model List<AloStorPerdeYikama_v2.Models.Galery_Tur>
+
+
+@*<button type="button" class="btn btn-outline-primary">Hepsi</button>*@
+<a class="btn btn-outline-primary" id="0" href="@Url.Action("Index","Home")" role="button">Hepsi</a>
+
+    @foreach (var item in Model)
+    {
+        <a class="btn btn-outline-primary" id="@item.ID" href="/Home/ByCategory/@item.ID" role="button">@item.tur</a>
+       
+    }
+
+
+
+@*<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-info active">
+        <input type="radio" name="options" id="0" autocomplete="off" checked> Hepsi
+    </label>
+    @foreach (var item in Model)
+    {
+        <label class="btn btn-info">
+            <input type="radio" name="options" id="@item.ID" autocomplete="off"> @item.tur
+        </label>
+    }
+</div>*@
+
+
+@*<div class="alazea-portfolio-filter">
+        <div class="portfolio-filter">
+            <button class="btn active" data-filter="*">Hepsi</button>
+
+
+            @foreach (var item in Model)
+            {
+                <button class="btn" data-filter=".temiz">@item.tur</button>
+                <button type="button" class="btn btn-info">@item.tur</button>
+            }
+
+            <button class="btn" data-filter=".kiyas">Karşılaştırma</button>
+            <button class="btn" data-filter=".ev">Ev Hizmetleri</button>
+            <button class="btn" data-filter=".is">Ofis Hizmetleri</button>
+        </div>
+    </div>*@
