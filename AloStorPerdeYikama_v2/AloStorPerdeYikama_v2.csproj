@@ -580,6 +580,7 @@
     <Content Include="Content\img\core-img\s3.png" />
     <Content Include="Content\img\storperde.jpg" />
     <Content Include="Content\video\yikama.mp4" />
+    <Content Include="deneme - Copy.html" />
     <Content Include="deneme.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -808,6 +809,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnaSayfaDTO.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -834,6 +836,8 @@
     <Content Include="Views\Admin\HizmetTuru_Delete.cshtml" />
     <Content Include="Views\Admin\HizmetTuru_Edit.cshtml" />
     <Content Include="Views\Shared\_PartialCategory.cshtml" />
+    <Content Include="Views\Shared\_PartialGalery.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -14,25 +14,25 @@
 
         @foreach (var slayt in Model.DTO_slider)
         {
-        <div class="single-hero-post bg-overlay">
-            <!-- Post Image -->
-            <div class="slide-img bg-img" style="background-image: url('data:image/png;base64,@System.Convert.ToBase64String(slayt.SliderFoto)');"></div>
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Post Content -->
-                        <div class="hero-slides-content text-center">
-                            <h2>@slayt.SliderText</h2>
-                            <p>@slayt.SliderSubText</p>
-                            <div class="welcome-btn-group">
-                                <a href="/About" class="btn alazea-btn mr-30">HAKKIMIZDA</a>
-                                <a href="/Contact" class="btn alazea-btn active">İLETİŞİM</a>
+            <div class="single-hero-post bg-overlay">
+                <!-- Post Image -->
+                <div class="slide-img bg-img" style="background-image: url('data:image/png;base64,@System.Convert.ToBase64String(slayt.SliderFoto)');"></div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <!-- Post Content -->
+                            <div class="hero-slides-content text-center">
+                                <h2>@slayt.SliderText</h2>
+                                <p>@slayt.SliderSubText</p>
+                                <div class="welcome-btn-group">
+                                    <a href="/About" class="btn alazea-btn mr-30">HAKKIMIZDA</a>
+                                    <a href="/Contact" class="btn alazea-btn active">İLETİŞİM</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         }
     </div>
 </section>
@@ -83,7 +83,7 @@
                                     {
                                         <p class="card-text">@item.TitleSub</p>
                                     }
-                                    
+
 
                                 </div>
                             </div>
@@ -115,27 +115,42 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row">
+    @*<div class="row">
         <div class="col-12 text-center">
             @Html.Action("GaleryTurleri", "Home")
-
-            @*<div class="alazea-portfolio-filter">
-                    <div class="portfolio-filter">
-                        <button class="btn active" data-filter="*">Hepsi</button>
-                        <button class="btn" data-filter=".temiz">Yıkanmış Ürünler</button>
-                        <button class="btn" data-filter=".kiyas">Karşılaştırma</button>
-                        <button class="btn" data-filter=".ev">Ev Hizmetleri</button>
-                        <button class="btn" data-filter=".is">Ofis Hizmetleri</button>
+        </div>*@
+    @*<div id="myBtnContainer">
+            <button class="btn1 active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn1" onclick="filterSelection('1')"> Nature</button>
+            <button class="btn1" onclick="filterSelection('2')"> Cars</button>
+            <button class="btn1" onclick="filterSelection('3')"> People</button>
+        </div>*@
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div id="myBtnContainer ">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="options" id="option1" onclick="filterSelection('all')" autocomplete="off" checked> Hepsi
+                        </label>
+                        @foreach (var item in Model.DTO_galery_tur)
+                        {
+                            <label class="btn btn-primary">
+                                <input type="radio" name="options" id="option2" onclick="filterSelection('@item.ID')" autocomplete="off"> @item.tur
+                            </label>
+                        }
                     </div>
-                </div>*@
+                </div>
+            </div>
         </div>
     </div>
     <div class="row alazea-portfolio">
         <!-- Single Portfolio Area -->
 
+
         @foreach (var item in Model.DTO_galery)
             {
-            <div class="col-12 col-sm-6 col-lg-3 single_portfolio_item @item.filter_name wow fadeInUp" data-wow-delay="100ms">
+            <div class="column_galery single_portfolio_item @item.filter_name wow fadeInUp" data-wow-delay="100ms">
                 <!-- Portfolio Thumbnail -->
                 <div class="portfolio-thumbnail bg-img" style="background-image: url('data:image/png;base64,@System.Convert.ToBase64String(item.galery_pic)');"></div>
                 <!-- Portfolio Hover Text -->
@@ -150,109 +165,14 @@
             </div>
         }
 
+
+
+        @*@Html.Action("Galery_Partial")*@
+        @*@Html.Partial("_PartialGalery",Model.DTO_galery)*@
+
     </div>
 </div>
 
-<!-- ##### Portfolio Area End ##### -->
-<!-- ##### Müşteri yorumları ##### -->
-@*<section class="testimonial-area section-padding-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="testimonials-slides owl-carousel">
-                    <!-- Single Testimonial Slide -->
-                    <div class="single-testimonial-slide">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-thumb">
-                                    <img src="./Content/img/bg-img/13-1.jpeg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-content">
-                                    <!-- Section Heading -->
-                                    <div class="section-heading">
-                                        <h2>MEMNUNİYETİNİZ, MEMNUNİYETİMİZDİR.</h2>
-                                        <p>Teşekkürler</p>
-                                    </div>
-                                    <p>
-                                        "Kahve lekesi dökülmüştü, İstanbul Detay
-                                        Stor Perde ile perdelerimiz ilk günkü gibi
-                                        oldu. Çok teşekkürler.
-                                        "
-                                    </p>
-                                    <div class="testimonial-author-info">
-                                        <h6>Ahmet D.</h6>
-                                        <p>Cafe Köşe İşl. Müd.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Testimonial Slide -->
-                    <div class="single-testimonial-slide">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-thumb">
-                                    <img src="./Content/img/bg-img/53-1.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-content">
-                                    <!-- Section Heading -->
-                                    <div class="section-heading">
-                                        <h2>TEMİZ PERDE, AYDINLIK İÇ ORTAM</h2>
-                                        <p>Perdelerimiz tertemiz.</p>
-                                    </div>
-                                    <p>
-                                        “Perdelerimizi nasıl yıkatacağız diye
-                                        düşünüyorduk, bir arkadaşımızın tavsiyesi
-                                        sonucu İstanbul Detay Stor Perde'ye ulaştık.
-                                        Sonuçtan çok memnun kaldık. Tertemiz elimize
-                                        ulaştı perdelerimiz. İyi ki sizi tercih etmişim."
-                                    </p>
-                                    <div class="testimonial-author-info">
-                                        <h6>Meryem G.</h6>
-                                        <p>Ev Hanımı</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Testimonial Slide -->
-                    <div class="single-testimonial-slide">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-thumb">
-                                    <img src="./Content/img/bg-img/15-1.jpeg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="testimonial-content">
-                                    <!-- Section Heading -->
-                                    <div class="section-heading">
-                                        <h2>HIZLI VE GÜVENİLİR HİZMET</h2>
-                                        <p>Teslimat tam zamanında.</p>
-                                    </div>
-                                    <p>
-                                        “Stor perde parçalarımızda eksiklikler ve
-                                        tamirat gereği vardı. Neyseki İstanbul Detay
-                                        Stor Perde'ye ulaştık. Uygun fiyata hızlı ve
-                                        kaliteli hizmeti almış olduk. Teşekkür ederim!”
-                                    </p>
-                                    <div class="testimonial-author-info">
-                                        <h6>Ali F.</h6>
-                                        <p>Döneristan Restaurant Müd.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>*@
 <!-- ##### Müşteri yorumları ##### -->
 <!-- ##### İletişim ##### -->
 <section class="contact-area bg-gray section-padding-100-0">
