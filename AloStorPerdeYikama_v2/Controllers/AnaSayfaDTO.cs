@@ -20,5 +20,7 @@ namespace AloStorPerdeYikama_v2.Controllers
 
         public List<HizmetTuru> DTO_Hizmet_Turu { get; set; }
 
+        public Iletisim DTO_iletisim { get; set; }
+
     }
 }

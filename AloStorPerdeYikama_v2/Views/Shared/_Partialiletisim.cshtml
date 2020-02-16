@@ -1,0 +1,42 @@
+﻿  @model AloStorPerdeYikama_v2.Models.Iletisim
+
+
+ <!-- Section Heading -->
+<div class="section-heading">
+    <h2>BİLGİ İSTEK FORMU</h2>
+    <p>Mesajınız iletin, müşteri temsilcimiz sizi arasın.</p>
+</div>
+<!-- Contact Form Area -->
+<div class="contact-form-area mb-100">
+    @using (Html.BeginForm("BilgiIstekFormuGonder", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @*@Html.ValidationSummary(false, "", new { @class = "text-danger" })*@
+        <div class="row">
+
+            <div class="col-12 col-sm-6">
+                @Html.TextBoxFor(x => x.name, new { placeholder = "Adınız...", @class = "form-control" })
+            </div>
+            <div class="col-12 col-sm-6">
+                @Html.TextBoxFor(x => x.eposta, new { placeholder = "Email Adresiniz...", @class = "form-control" })
+
+            </div>
+            <div class="col-12">
+                @Html.TextBoxFor(x => x.konu, new { placeholder = "Konu...", @class = "form-control" })
+            </div>
+            <div class="col-12">
+                @Html.TextAreaFor(x => x.mesaj, new { placeholder = "Mesajınız...", @class = "form-control" })
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn alazea-btn mt-15">GÖNDER</button>
+                <label>@TempData["Mesaj"]</label>
+            </div>
+        </div>
+
+
+    }
+
+</div>
+

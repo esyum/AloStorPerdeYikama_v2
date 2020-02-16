@@ -12,35 +12,57 @@ namespace AloStorPerdeYikama_v2.Controllers
     public class HomeController : Controller
     {
         DatabaseContext db = new DatabaseContext();
-
+        
         // GET: Home
         public ActionResult Index()
         {
-            AnaSayfaDTO obj = new AnaSayfaDTO();
-
-
-            //if (TempData["_filterName"] == null)
-            //{
-            //    obj.DTO_galery = db.galery.OrderByDescending(x => x.OlusturmaTarihi).ToList();
-            //}
-            //else
-            //{
-            //    string filter = TempData["_filterName"].ToString();
-            //    obj.DTO_galery = db.galery.Where(x => x.filter_name == filter).OrderByDescending(x => x.OlusturmaTarihi).ToList();
-            //}
-
+AnaSayfaDTO obj = new AnaSayfaDTO();
             obj.DTO_galery = db.galery.OrderByDescending(x => x.OlusturmaTarihi).ToList();
             obj.DTO_slider = db.slayder.OrderByDescending(x => x.OlusturmaTarihi).ToList();
             obj.DTO_galery_tur = db.galery_tur.ToList();
             obj.DTO_Hizmet_Turu = db.hizmet_turu.ToList();
+            obj.DTO_iletisim = new Iletisim();
             //List<Slayder> slayt = db.slayder.ToList();
 
-            return View(obj);
+            return View("Index",obj);
+        }
+
+        //public PartialViewResult BilgiIstekFormuGonder()
+        //{
+
+        //    return PartialView("_Partialiletisim");
+        //}
+
+        [HttpPost]
+        public ActionResult BilgiIstekFormuGonder(AnaSayfaDTO blgform)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return Index();
+
+                Iletisim _bilgiform = new Iletisim();
+                _bilgiform.name = blgform.DTO_iletisim.name;
+                _bilgiform.eposta = blgform.DTO_iletisim.eposta;
+                _bilgiform.konu = blgform.DTO_iletisim.konu;
+                _bilgiform.mesaj = blgform.DTO_iletisim.mesaj;
+                _bilgiform.OlusturmaTarihi = DateTime.Now;
+
+                db.iletisim.Add(_bilgiform);
+                db.SaveChanges();
+                TempData["Mesaj"] = "Form Başarı ile gönderilmiştir.";
+                return Index();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Eklerken hata oluştu");
+            }
+
         }
 
         public ActionResult ByCategory(int? ID)
         {
-            if (ID==null)
+            if (ID == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -60,8 +82,8 @@ namespace AloStorPerdeYikama_v2.Controllers
         public ActionResult Galery_Partial()
         {
             List<Galery> _galery = db.galery.OrderByDescending(x => x.OlusturmaTarihi).ToList();
-           
-            return PartialView("_PartialGalery",_galery);
+
+            return PartialView("_PartialGalery", _galery);
         }
 
         public ActionResult HizmetTurleri(int? ID)
@@ -79,11 +101,5 @@ namespace AloStorPerdeYikama_v2.Controllers
             return PartialView("_PartialHizmetDetay", hzt);
         }
 
-        public ActionResult GaleryTurleri()
-        {
-            List<Galery_Tur> _galery_tur = db.galery_tur.ToList();
-
-            return PartialView("_PartialCategory", _galery_tur);
-        }
     }
 }

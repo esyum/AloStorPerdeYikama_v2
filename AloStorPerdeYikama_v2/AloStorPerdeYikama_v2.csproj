@@ -514,6 +514,9 @@
     <Content Include="Content\classy-nav.css" />
     <Content Include="Content\elegant-icon.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\img\bg-img\ContactUs.jpg" />
+    <Content Include="Content\img\bg-img\iletisim_resim.PNG" />
+    <Content Include="Content\img\core-img\logo_y.jpeg" />
     <Content Include="Content\magnific-popup.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\owl.carousel.min.css" />
@@ -817,6 +820,7 @@
     <Compile Include="Models\Galery.cs" />
     <Compile Include="Models\Galery_Tur.cs" />
     <Compile Include="Models\HizmetTuru.cs" />
+    <Compile Include="Models\Iletisim.cs" />
     <Compile Include="Models\Slayder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -835,9 +839,9 @@
     <Content Include="Views\Admin\MyHizmet.cshtml" />
     <Content Include="Views\Admin\HizmetTuru_Delete.cshtml" />
     <Content Include="Views\Admin\HizmetTuru_Edit.cshtml" />
-    <Content Include="Views\Shared\_PartialCategory.cshtml" />
-    <Content Include="Views\Shared\_PartialGalery.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Shared\_Partialiletisim.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
