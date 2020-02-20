@@ -517,6 +517,7 @@
     <Content Include="Content\img\bg-img\ContactUs.jpg" />
     <Content Include="Content\img\bg-img\iletisim_resim.PNG" />
     <Content Include="Content\img\core-img\logo_y.jpeg" />
+    <Content Include="Content\login.css" />
     <Content Include="Content\magnific-popup.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\owl.carousel.min.css" />
@@ -814,6 +815,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -842,6 +844,7 @@
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Shared\_Partialiletisim.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
