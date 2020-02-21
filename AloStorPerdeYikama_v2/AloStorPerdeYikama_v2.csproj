@@ -513,10 +513,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\classy-nav.css" />
     <Content Include="Content\elegant-icon.css" />
+    <Content Include="Content\floating-wpp.css" />
+    <Content Include="Content\floating-wpp.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\img\bg-img\ContactUs.jpg" />
     <Content Include="Content\img\bg-img\iletisim_resim.PNG" />
     <Content Include="Content\img\core-img\logo_y.jpeg" />
+    <Content Include="Content\img\core-img\whatsapp.svg" />
     <Content Include="Content\login.css" />
     <Content Include="Content\magnific-popup.css" />
     <Content Include="Content\main.css" />
@@ -704,6 +707,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="App_Code\Bootstrap.cshtml" />
     <None Include="scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="scripts\floating-wpp.js" />
+    <Content Include="scripts\floating-wpp.min.js" />
     <Content Include="scripts\jquery-3.4.1.js" />
     <Content Include="scripts\jquery-3.4.1.min.js" />
     <Content Include="scripts\jquery-3.4.1.slim.js" />
