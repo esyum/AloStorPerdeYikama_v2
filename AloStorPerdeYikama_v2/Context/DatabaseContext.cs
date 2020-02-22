@@ -16,6 +16,7 @@ namespace AloStorPerdeYikama_v2.Context
         public DbSet<Galery_Tur> galery_tur { get; set; }
         public DbSet<HizmetTuru> hizmet_turu { get; set; }
         public DbSet<Iletisim> iletisim { get; set; }
+        public DbSet<Login> login { get; set; }
 
         public DatabaseContext()
         {

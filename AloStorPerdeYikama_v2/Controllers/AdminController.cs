@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace AloStorPerdeYikama_v2.Controllers
 {
+    [UserAuthorize]
     public class AdminController : Controller
     {
         DatabaseContext db = new DatabaseContext();

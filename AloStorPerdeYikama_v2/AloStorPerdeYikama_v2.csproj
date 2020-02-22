@@ -821,6 +821,7 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UserAuthorize.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -828,6 +829,7 @@
     <Compile Include="Models\Galery_Tur.cs" />
     <Compile Include="Models\HizmetTuru.cs" />
     <Compile Include="Models\Iletisim.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Slayder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -850,6 +852,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Shared\_Partialiletisim.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

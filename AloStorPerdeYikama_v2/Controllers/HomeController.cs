@@ -27,11 +27,11 @@ AnaSayfaDTO obj = new AnaSayfaDTO();
             return View("Index",obj);
         }
 
-        //public PartialViewResult BilgiIstekFormuGonder()
-        //{
+        public PartialViewResult BilgiIstekFormuGonder()
+        {
 
-        //    return PartialView("_Partialiletisim");
-        //}
+            return PartialView("_Partialiletisim",new Iletisim());
+        }
 
         [HttpPost]
         public ActionResult BilgiIstekFormuGonder(AnaSayfaDTO blgform)
@@ -101,5 +101,31 @@ AnaSayfaDTO obj = new AnaSayfaDTO();
             return PartialView("_PartialHizmetDetay", hzt);
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(Login model)
+        {
+            if (ModelState.IsValid)
+            {
+               List<Login> _login = db.login.Where(x => x.Username == model.Username&&x.Password==model.Password).ToList();
+
+                if (_login.Count>0)
+                {
+                    Session["username"] = model.Username;
+
+                    return RedirectToAction("Index","Admin");
+                }
+                else
+                {
+                    TempData["LoginHata"] = "Kullanıcı adı veya şifre hatalı...";
+                    return View();
+                }
+            }
+            return View();
+        }
     }
 }

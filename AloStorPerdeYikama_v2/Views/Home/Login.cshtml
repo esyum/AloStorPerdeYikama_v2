@@ -1,0 +1,62 @@
+﻿@using AloStorPerdeYikama_v2.Models
+@model Login
+
+@{
+    ViewBag.Title = "Giriş Sayfası";
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/login.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
+<script src="~/scripts/jquery-3.4.1.min.js"></script>
+<script src="~/scripts/bootstrap.min.js"></script>
+
+<style type="text/css">
+    .validation-summary-errors {
+        border: 2px dotted #a94442;
+        background-color: #d76663;
+        border-radius: 8px;
+    }
+
+        .validation-summary-errors ul {
+            list-style-type: none;
+            padding: 10px;
+            color: #fff;
+        }
+</style>
+
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <div class="row">
+            <h1 class="text-info"><i class="fa fa-lock" aria-hidden="true"></i> Yönetici Girişi</h1>
+
+        </div><br /><br />
+
+        @Html.ValidationSummary(false)
+
+        <label>
+
+        </label>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+            </div>
+            @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "Kullanıcı adı" })
+
+        </div><br />
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-key icon"></i></span>
+            </div>
+            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Şifre", type = "password" })
+            @*<input type="Password" name="" class="form-control" placeholder="Şifre" />*@
+        </div><br />
+
+        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-off"></span> Giriş</button>
+        <br />
+        <label>@TempData["LoginHata"]</label>
+    </div>
+}
