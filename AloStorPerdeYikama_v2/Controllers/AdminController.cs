@@ -21,6 +21,12 @@ namespace AloStorPerdeYikama_v2.Controllers
             return View();
         }
 
+        public ActionResult MyIletisim ()
+        {
+            List<Iletisim> _iletisim = db.iletisim.OrderByDescending(x => x.OlusturmaTarihi).ToList();
+            return View(_iletisim);
+        }
+
         public ActionResult MySlayder()
         {
             List<Slayder> _slayder = db.slayder.OrderByDescending(x=>x.OlusturmaTarihi).ToList();

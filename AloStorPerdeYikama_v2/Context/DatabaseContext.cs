@@ -29,14 +29,33 @@ namespace AloStorPerdeYikama_v2.Context
     {
         protected override void Seed(DatabaseContext context)
         {
-            ////slayder oluştur
+            //Login için bir kişi oluşturuyoruz
+            Login _login = new Login();
+            _login.Username = "yahya";
+            _login.Password = "aloyahya";
+            context.login.Add(_login);
+            context.SaveChanges();
+
+            //Galery türlerini ekleyelim
+            Galery_Tur _galery = new Galery_Tur();
+            List<string> turler = new List<string> { "Yıkanmış Ürünler", "Karşılaştırma", "Ev Hizmetleri", "Ofis Hizmetleri" };
+            foreach (var item in turler)
+            {
+                _galery.tur = item;
+                context.galery_tur.Add(_galery);
+                context.SaveChanges();
+            }
+
+            //slayder oluştur
 
             //Slayder _slayder = new Slayder();
             //_slayder.OlusturmaTarihi = DateTime.Now;
             //_slayder.SliderSubText = "Sağlığınızı önemsiyor, çevre dostu temizlik ürünleri kullanıyoruz. Tecrübeli personelimiz ile hizmetinizdeyiz.";
             //_slayder.SliderText = "PERDELERİNİZİ İLK GÜNKÜ HALİNE GETİRİYORUZ";
 
-            //Image resim = Image.FromFile(@"\\Content\\img\\storperde.jpg");
+            //byte[] bytes = (byte[])(new ImageConverter()).ConvertTo("@\\Content\\img\\bg-img\\1-1.jpg", typeof(byte[]));
+
+            //_slayder.SliderFoto = bytes;
 
             //using (MemoryStream m = new MemoryStream())
             //{
