@@ -16,7 +16,7 @@ namespace AloStorPerdeYikama_v2.Controllers
             }
             else
             {
-                httpContext.Response.Redirect("/Home/Login");
+                httpContext.Response.Redirect("/Home");
                 return false;
             }
 
