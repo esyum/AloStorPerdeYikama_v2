@@ -518,6 +518,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\img\bg-img\ContactUs.jpg" />
     <Content Include="Content\img\bg-img\iletisim_resim.PNG" />
+    <Content Include="Content\img\core-img\logo_beyaz.jpeg" />
     <Content Include="Content\img\core-img\logo_y.jpeg" />
     <Content Include="Content\img\core-img\whatsapp.svg" />
     <Content Include="Content\login.css" />
@@ -576,7 +577,6 @@
     <Content Include="Content\img\core-img\favicon.ico" />
     <Content Include="Content\img\core-img\favicon2.ico" />
     <Content Include="Content\img\core-img\leaf.png" />
-    <Content Include="Content\img\core-img\logo.png" />
     <Content Include="Content\img\core-img\logo2.png" />
     <Content Include="Content\img\core-img\pot.png" />
     <Content Include="Content\img\core-img\s1-1.png" />
@@ -820,7 +820,6 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserAuthorize.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -851,7 +850,6 @@
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Shared\_Partialiletisim.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Admin\MyIletisim.cshtml" />
     <None Include="Web.Debug.config">

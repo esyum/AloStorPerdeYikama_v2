@@ -104,7 +104,7 @@
             <!-- Section Heading -->
             <div class="section-heading text-center">
                 <h2>NELER YAPTIK?</h2>
-                <p>Tecrübe ve bilgi birimimiz ile hizmetinizdeyiz.</p>
+                <p>Tecrübe ve bilgi birikimimiz ile hizmetinizdeyiz.</p>
             </div>
         </div>
     </div>
@@ -132,7 +132,7 @@
                         @foreach (var item in Model.DTO_galery_tur)
                         {
                         <label class="btn btn-primary">
-                            <input type="radio" name="options" id="option2" onclick="filterSelection('@item.ID')" autocomplete="off"> @item.tur
+                            <input type="radio" name="options" id="option2" onclick="filterSelection('@item.tur')" autocomplete="off"> @item.tur
                         </label>
                         }
                     </div>

@@ -1,4 +1,4 @@
-﻿
+﻿@model AloStorPerdeYikama_v2.Models.Iletisim
 @{
     ViewBag.Title = "İletişim";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -55,51 +55,56 @@
     </div>
 </div>
 <!-- ##### Contact Area Info End ##### -->
-<!-- ##### Contact Area Start ##### -->
-<section class="contact-area">
+<!-- ##### İletişim ##### -->
+<section class="contact-area bg-gray section-padding-100-0">
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="col-12 col-lg-5">
                 <!-- Section Heading -->
                 <div class="section-heading">
-                    <h2>HEMEN SİPARİŞİNİZİ VERİN</h2>
+                    <h2>BİLGİ İSTEK FORMU</h2>
                     <p>Mesajınız iletin, müşteri temsilcimiz sizi arasın.</p>
                 </div>
                 <!-- Contact Form Area -->
                 <div class="contact-form-area mb-100">
-                    <form action="#" method="post">
+                    @using (Html.BeginForm("BilgiIstekFormuGonder", "Contact", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @*@Html.ValidationSummary(false, "", new { @class = "text-danger" })*@
                         <div class="row">
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="contact-name" placeholder="Adınız">
-                                </div>
+
+                            <div class="col-12 col-sm-6">
+                                @Html.TextBoxFor(x => x.name, new { placeholder = "Adınız...", @class = "form-control" })
                             </div>
-                            <div class="col-12 col-md-6">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="contact-email" placeholder="Email Adresiniz">
-                                </div>
+                            <div class="col-12 col-sm-6">
+                                @Html.TextBoxFor(x => x.eposta, new { placeholder = "Email Adresiniz...", @class = "form-control" })
+
                             </div>
                             <div class="col-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="contact-subject" placeholder="Konu">
-                                </div>
+                                @Html.TextBoxFor(x => x.konu, new { placeholder = "Konu...", @class = "form-control" })
                             </div>
                             <div class="col-12">
-                                <div class="form-group">
-                                    <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Mesaj"></textarea>
-                                </div>
+                                @Html.TextAreaFor(x => x.mesaj, new { placeholder = "Mesajınız...", @class = "form-control" })
                             </div>
+
                             <div class="col-12">
-                                <button type="submit" class="btn alazea-btn mt-15">Gönder</button>
+                                <button type="submit" class="btn alazea-btn mt-15">GÖNDER</button>
+                                <label>@TempData["Mesaj"]</label>
                             </div>
                         </div>
-                    </form>
+
+
+                    }
+
                 </div>
             </div>
 
             <div class="col-12 col-lg-6">
                 <!-- Google Maps -->
                 <div class="map-area mb-100">
+                    @*   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.179165086162!2d29.001578315719065!3d41.02133602656952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAxJzE2LjgiTiAyOcKwMDAnMTMuNiJF!5e0!3m2!1str!2str!4v1579725696064!5m2!1str!2str" allowfullscreen></iframe>*@
+
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d266.12866421849094!2d28.67220686187549!3d41.00551528289827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55f7fcf2d279b%3A0xbe8a6b4d8162d8f3!2sPerdeci!5e0!3m2!1str!2str!4v1580905847328!5m2!1str!2str" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
             </div>

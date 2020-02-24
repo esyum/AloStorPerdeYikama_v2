@@ -46,12 +46,17 @@ namespace AloStorPerdeYikama_v2.Context
                 context.SaveChanges();
             }
 
+
             //slayder oluştur
 
             //Slayder _slayder = new Slayder();
             //_slayder.OlusturmaTarihi = DateTime.Now;
             //_slayder.SliderSubText = "Sağlığınızı önemsiyor, çevre dostu temizlik ürünleri kullanıyoruz. Tecrübeli personelimiz ile hizmetinizdeyiz.";
             //_slayder.SliderText = "PERDELERİNİZİ İLK GÜNKÜ HALİNE GETİRİYORUZ";
+
+            //context.slayder.Add(_slayder);
+            //context.SaveChanges();
+
 
             //byte[] bytes = (byte[])(new ImageConverter()).ConvertTo("@\\Content\\img\\bg-img\\1-1.jpg", typeof(byte[]));
 
