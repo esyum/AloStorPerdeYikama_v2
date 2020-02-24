@@ -25,7 +25,7 @@ namespace AloStorPerdeYikama_v2.Controllers
             try
             {
                 if (!ModelState.IsValid)
-                    return View("Index");
+                    return RedirectToAction("Index", "Contact");
 
                 Iletisim _bilgiform = new Iletisim();
                 _bilgiform.name = blgform.name;
@@ -37,7 +37,8 @@ namespace AloStorPerdeYikama_v2.Controllers
                 db.iletisim.Add(_bilgiform);
                 db.SaveChanges();
                 TempData["Mesaj"] = "Form Başarı ile gönderilmiştir.";
-                return View("Index");
+                //return View("Index");
+                return RedirectToAction("Index", "Contact");
             }
             catch (Exception ex)
             {

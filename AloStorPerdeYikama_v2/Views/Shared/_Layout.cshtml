@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800" rel="stylesheet">
     <!-- Favicon -->
     <title>Alo Stor Perde Yıkama</title>
-    <link rel="icon" href="~/Content/img/core-img/favicon2.ico">
+    <link rel="icon" href="~/Content/img/core-img/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
@@ -70,14 +70,13 @@
             }
     </style>
 
-
 </head>
 <body>
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-circle"></div>
         <div class="preloader-img">
-            <img src="~/Content/img/core-img/bubble.png" alt="Alo stor perde logo">
+            <img src="~/Content/img/core-img/logo_mavi.png" alt="Alo stor perde logo">
         </div>
     </div>
     <!-- ##### Header Area Start ##### -->
@@ -99,16 +98,16 @@
             <div class="container">
                 <!--Row Start-->
                 <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 align-self-center left-side pull-left">
+                    @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 align-self-center left-side pull-left">*@
+                    <div class="col-lg-5 col-md-5 align-self-center left-side">
                         <p><strong>Alo Stor Perde Yıkama</strong> <span>0 543 721 36 15</span></p>
                     </div>
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 align-self-center left-side pull-left">
-                  
+                    <div class="col-lg-2 col-md-2 col-5 align-self-center logo">
+                        @*<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 align-self-center">*@
+                        <a href="/home"><img src="~/Content/img/core-img/logo_beyaz.jpeg" alt="logo"></a>
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 align-self-center">
-                            <a href="/home"><img src="~/Content/img/core-img/logo_beyaz.jpeg" alt="logo"></a>
-                        </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 align-self-center right-side pull-right">
+                    <div class="col-lg-5 col-md-5 col-7 align-self-center right-side">
+                        @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 align-self-center right-side pull-right">*@
                         <div class="social-icons square">
                             <!-- Page Content -->
                             <div id="page-content-wrapper">
@@ -117,13 +116,13 @@
                         </div>
                         <div class="social-icons another">
                             @*<i class="fa fa-facebook-official" aria-hidden="true"></i>
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                                <i class="fa fa-pinterest" aria-hidden="true"></i>
-                                <i class="fa fa-youtube" aria-hidden="true"></i>*@
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+                <i class="fa fa-youtube" aria-hidden="true"></i>*@
 
                             <a href="https://www.facebook.com/alostorperdeyikama" target="_blank" title="Facebook hesabı"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                             <a href="https://www.instagram.com/alostorperdeyikama" target="_blank" title="Instagram hesabı"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a href="/Home/Login" title="login"><i class="fa fa-user" aria-hidden="true"></i></a>
+                            <a href="/Home/Login" target="_blank" title="login"><i class="fa fa-user" aria-hidden="true"></i></a>
                         </div>
                         <!--Div where the WhatsApp will be rendered-->
                         <div id="WAButton"></div>
@@ -138,198 +137,198 @@
 
     </header>
 
-        <section class="hero-area">
+    <section class="hero-area">
 
-            @RenderBody()
+        @RenderBody()
 
-        </section>
+    </section>
 
-        <!-- ##### Footer Area Start ##### -->
-        <footer class="footer-area bg-img" style="background-image: url(./Content/img/bg-img/3-4.jpg);">
-            <!-- Main Footer Area -->
-            <div class="main-footer-area">
-                <div class="container">
-                    <div class="row">
-                        <!-- Single Footer Widget -->
-                        <div class="col-12 col-sm-6 col-lg-4 text-center">
-                            <div class="single-footer-widget">
-                                <div class="footer-logo  mb-30">
-                                    <a href="/Home"><img class=" border border-info" src="~/Content/img/core-img/logo_beyaz.jpeg" alt="logo"></a>
-                                </div>
-                                <p>Bizi takip edin.</p>
-                                <div class="social-info">
-                                    <a href="https://www.facebook.com/alostorperdeyikama" target="_blank" title="Facebook hesabı"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    @*<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>*@
-                                    @*<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>*@
-                                    <a href="https://www.instagram.com/alostorperdeyikama" target="_blank" title="Instagram hesabı"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    @*<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>*@
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area bg-img" style="background-image: url(./Content/img/bg-img/3-4.jpg);">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-4 text-center">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo  mb-30">
+                                <a href="/Home"><img class=" border border-info" src="~/Content/img/core-img/logo_beyaz.jpeg" alt="logo"></a>
+                            </div>
+                            <p>Bizi takip edin.</p>
+                            <div class="social-info">
+                                <a href="https://www.facebook.com/alostorperdeyikama" target="_blank" title="Facebook hesabı"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                @*<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>*@
+                                @*<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>*@
+                                <a href="https://www.instagram.com/alostorperdeyikama" target="_blank" title="Instagram hesabı"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                @*<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>*@
 
 
-                                </div>
                             </div>
                         </div>
-                        <!-- Single Footer Widget -->
-                        <div class="col-12 col-sm-6 col-lg-4 text-center">
-                            <div class="single-footer-widget">
-                                <div class="widget-title">
-                                    <h5>SAYFALAR</h5>
-                                </div>
-                                <nav class="widget-nav">
-                                    <ul>
-                                        <li><a href="/Home">Ana Sayfa</a></li>
-                                        <li><a href="/About">Hakkımızda</a></li>
-                                        <li><a href="/Contact">İletişim</a></li>
-                                    </ul>
-                                </nav>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-4 text-center">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>SAYFALAR</h5>
                             </div>
+                            <nav class="widget-nav">
+                                <ul>
+                                    <li><a href="/Home">Ana Sayfa</a></li>
+                                    <li><a href="/About">Hakkımızda</a></li>
+                                    <li><a href="/Contact">İletişim</a></li>
+                                </ul>
+                            </nav>
                         </div>
-                        <!-- Single Footer Widget -->
-                        <!-- Silindi -->
-                        <!-- Single Footer Widget -->
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="single-footer-widget">
-                                <div class="widget-title">
-                                    <h5>İLETİŞİM</h5>
-                                </div>
-                                <div class="contact-information">
-                                    <p><span>Addres:</span> Yakuplu Mah E-5 Karayolu Üzeri Hasırcılar İş Merkezi, D:1, 34524 Beylikdüzü/İstanbul</p>
-                                    <p><span>Telefon:</span> 0 543 721 36 15 - 0 543 721 36 14</p>
-                                    <p><span>Email:</span> aloostorperdeyikama@gmail.com</p>
-                                    <p><span>Çalışma Saatleri:</span> Pazartesi - Cumartesi 8:00 - 20:00</p>
-                                </div>
+                    </div>
+                    <!-- Single Footer Widget -->
+                    <!-- Silindi -->
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>İLETİŞİM</h5>
+                            </div>
+                            <div class="contact-information">
+                                <p><span>Addres:</span> Yakuplu Mah E-5 Karayolu Üzeri Hasırcılar İş Merkezi, D:1, 34524 Beylikdüzü/İstanbul</p>
+                                <p><span>Telefon:</span> 0 543 721 36 15 - 0 543 721 36 14</p>
+                                <p><span>Email:</span> aloostorperdeyikama@gmail.com</p>
+                                <p><span>Çalışma Saatleri:</span> Pazartesi - Cumartesi 8:00 - 20:00</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Footer Bottom Area -->
-            <div class="footer-bottom-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="border-line"></div>
+        </div>
+        <!-- Footer Bottom Area -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="border-line"></div>
+                    </div>
+                    <!-- Copywrite Text -->
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>
+                                &copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> Tüm Hakları Saklıdır. | Bu site Esyum tarafından  tasarlanmıştır.
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
                         </div>
-                        <!-- Copywrite Text -->
-                        <div class="col-12 col-md-6">
-                            <div class="copywrite-text">
-                                <p>
-                                    &copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;
-                                    <script>document.write(new Date().getFullYear());</script> Tüm Hakları Saklıdır. | Bu site Esyum tarafından  tasarlanmıştır.
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Footer Nav -->
-                        <div class="col-12 col-md-6">
-                            <div class="footer-nav">
-                                <nav>
-                                    <ul>
-                                        <li><a href="/Home">Ana Sayfa</a></li>
-                                        <li><a href="/About">Hakkımızda</a></li>
-                                        <li><a href="/Contact">İletişim</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                    </div>
+                    <!-- Footer Nav -->
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="/Home">Ana Sayfa</a></li>
+                                    <li><a href="/About">Hakkımızda</a></li>
+                                    <li><a href="/Contact">İletişim</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- ##### Footer Area End ##### -->
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="~/scripts/jquery-3.4.1.min.js"></script>
-        @*<script src="~/scripts/jquery-3.4.1.slim.min.js"></script>*@
-        <script src="~/scripts/popper.min.js"></script>
-        <script src="~/scripts/bootstrap.min.js"></script>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="~/scripts/jquery-3.4.1.min.js"></script>
+    @*<script src="~/scripts/jquery-3.4.1.slim.min.js"></script>*@
+    <script src="~/scripts/popper.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
 
-        <script src="~/scripts/plugins.js"></script>
-        <script src="~/scripts/active.js"></script>
-        <script src="~/scripts/respond.min.js"></script>
-        <script src="~/scripts/animate.js"></script>
-        <script src="~/scripts/custom.js"></script>
+    <script src="~/scripts/plugins.js"></script>
+    <script src="~/scripts/active.js"></script>
+    <script src="~/scripts/respond.min.js"></script>
+    <script src="~/scripts/animate.js"></script>
+    <script src="~/scripts/custom.js"></script>
 
-        <!--Floating WhatsApp javascript-->
-        <script src="~/scripts/floating-wpp.min.js"></script>
+    <!--Floating WhatsApp javascript-->
+    <script src="~/scripts/floating-wpp.min.js"></script>
 
 
-        <script type="text/javascript">
+    <script type="text/javascript">
 
-            $(function () {
-                $('#WAButton').floatingWhatsApp({
-                    phone: '+905380558603', //WhatsApp Business phone number
-                    headerTitle: 'İletişim için WhatsApp!', //Popup Title
-                    popupMessage: 'Merhaba, size nasıl yardımcı olabilirim?', //Popup Message
-                    showPopup: true, //Enables popup display
-                    buttonImage: '<img src="../Content/img/core-img/whatsapp.svg" />', //Button Image
-                    //headerColor: 'crimson', //Custom header color
-                    //backgroundColor: 'crimson', //Custom background button color
-                    position: "left" //Position: left | right
+        $(function () {
+            $('#WAButton').floatingWhatsApp({
+                phone: '+905437213615', //WhatsApp Business phone number
+                headerTitle: 'İletişim için WhatsApp!', //Popup Title
+                popupMessage: 'Merhaba, size nasıl yardımcı olabilirim?', //Popup Message
+                showPopup: true, //Enables popup display
+                buttonImage: '<img src="../Content/img/core-img/whatsapp.svg" />', //Button Image
+                //headerColor: 'crimson', //Custom header color
+                //backgroundColor: 'crimson', //Custom background button color
+                position: "left" //Position: left | right
 
-                });
             });
-        </script>
+        });
+    </script>
 
-        <!--Floating WhatsApp javascript bitti-->
+    <!--Floating WhatsApp javascript bitti-->
 
-        <script>
-            $(function () {
-                $('#denemehkn').on('show.bs.modal', function (e) {
-                    var btn = $(e.relatedTarget);
-                    var aciklama = btn.data("hizmet-id")
-                    $("#denemehkn_body").load("/Home/HizmetTurleri/" + aciklama);
-                })
+    <script>
+        $(function () {
+            $('#denemehkn').on('show.bs.modal', function (e) {
+                var btn = $(e.relatedTarget);
+                var aciklama = btn.data("hizmet-id")
+                $("#denemehkn_body").load("/Home/HizmetTurleri/" + aciklama);
+            })
+        });
+    </script>
+
+
+    @*Galery için script*@
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("column_galery");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
             });
-        </script>
-
-
-        @*Galery için script*@
-        <script>
-            filterSelection("all")
-            function filterSelection(c) {
-                var x, i;
-                x = document.getElementsByClassName("column_galery");
-                if (c == "all") c = "";
-                for (i = 0; i < x.length; i++) {
-                    w3RemoveClass(x[i], "show");
-                    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-                }
-            }
-
-            function w3AddClass(element, name) {
-                var i, arr1, arr2;
-                arr1 = element.className.split(" ");
-                arr2 = name.split(" ");
-                for (i = 0; i < arr2.length; i++) {
-                    if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
-                }
-            }
-
-            function w3RemoveClass(element, name) {
-                var i, arr1, arr2;
-                arr1 = element.className.split(" ");
-                arr2 = name.split(" ");
-                for (i = 0; i < arr2.length; i++) {
-                    while (arr1.indexOf(arr2[i]) > -1) {
-                        arr1.splice(arr1.indexOf(arr2[i]), 1);
-                    }
-                }
-                element.className = arr1.join(" ");
-            }
-
-
-            // Add active class to the current button (highlight it)
-            var btnContainer = document.getElementById("myBtnContainer");
-            var btns = btnContainer.getElementsByClassName("btn");
-            for (var i = 0; i < btns.length; i++) {
-                btns[i].addEventListener("click", function () {
-                    var current = document.getElementsByClassName("active");
-                    current[0].className = current[0].className.replace(" active", "");
-                    this.className += " active";
-                });
-            }
-        </script>
+        }
+    </script>
 
 </body>
 </html>

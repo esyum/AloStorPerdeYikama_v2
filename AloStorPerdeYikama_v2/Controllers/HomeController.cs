@@ -27,19 +27,13 @@ AnaSayfaDTO obj = new AnaSayfaDTO();
             return View("Index",obj);
         }
 
-        public PartialViewResult BilgiIstekFormuGonder()
-        {
-
-            return PartialView("_Partialiletisim",new Iletisim());
-        }
-
         [HttpPost]
         public ActionResult BilgiIstekFormuGonder(AnaSayfaDTO blgform)
         {
             try
             {
                 if (!ModelState.IsValid)
-                    return Index();
+                    return RedirectToAction("Index", "Home");
 
                 Iletisim _bilgiform = new Iletisim();
                 _bilgiform.name = blgform.DTO_iletisim.name;
@@ -51,7 +45,7 @@ AnaSayfaDTO obj = new AnaSayfaDTO();
                 db.iletisim.Add(_bilgiform);
                 db.SaveChanges();
                 TempData["Mesaj"] = "Form Başarı ile gönderilmiştir.";
-                return Index();
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {

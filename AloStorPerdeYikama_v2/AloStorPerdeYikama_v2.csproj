@@ -519,6 +519,7 @@
     <Content Include="Content\img\bg-img\ContactUs.jpg" />
     <Content Include="Content\img\bg-img\iletisim_resim.PNG" />
     <Content Include="Content\img\core-img\logo_beyaz.jpeg" />
+    <Content Include="Content\img\core-img\logo_mavi.png" />
     <Content Include="Content\img\core-img\logo_y.jpeg" />
     <Content Include="Content\img\core-img\whatsapp.svg" />
     <Content Include="Content\login.css" />

@@ -46,54 +46,6 @@ namespace AloStorPerdeYikama_v2.Context
                 context.SaveChanges();
             }
 
-
-            //slayder oluştur
-
-            //Slayder _slayder = new Slayder();
-            //_slayder.OlusturmaTarihi = DateTime.Now;
-            //_slayder.SliderSubText = "Sağlığınızı önemsiyor, çevre dostu temizlik ürünleri kullanıyoruz. Tecrübeli personelimiz ile hizmetinizdeyiz.";
-            //_slayder.SliderText = "PERDELERİNİZİ İLK GÜNKÜ HALİNE GETİRİYORUZ";
-
-            //context.slayder.Add(_slayder);
-            //context.SaveChanges();
-
-
-            //byte[] bytes = (byte[])(new ImageConverter()).ConvertTo("@\\Content\\img\\bg-img\\1-1.jpg", typeof(byte[]));
-
-            //_slayder.SliderFoto = bytes;
-
-            //using (MemoryStream m = new MemoryStream())
-            //{
-            //    resim.Save(m, resim.RawFormat);
-            //    _slayder.SliderFoto = m.ToArray();
-            //}
-            //context.slayder.Add(_slayder);
-            //context.SaveChanges();
-
-            //List<Slayder> tumSlayt = context.slayder.ToList();
-
-            ////galery ekle
-
-            //Galery _galery = new Galery();
-            //_galery.baslik = "Stor Perdeniz Tertemiz";
-            //_galery.alt_baslik = "Titiz temizlik bizim işimiz.";
-            //_galery.filter_name = "temiz";
-            //_galery.title = "Alo Stor Perde";
-            //_galery.OlusturmaTarihi = DateTime.Now;
-
-            //resim = Image.FromFile(@"D:\yazılım\esyum\Stor_Perde_Yikama\Stor_Perde_Yikama\Content\img\bg-img\1-1.jpg");
-
-            //using (MemoryStream g = new MemoryStream())
-            //{
-            //    resim.Save(g, resim.RawFormat);
-            //    _galery.galery_pic = g.ToArray();
-            //}
-
-            //context.galery.Add(_galery);
-            //context.SaveChanges();
-
-
-            ////galery 
         }
 
 

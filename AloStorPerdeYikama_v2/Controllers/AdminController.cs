@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace AloStorPerdeYikama_v2.Controllers
 {
@@ -101,6 +102,12 @@ namespace AloStorPerdeYikama_v2.Controllers
         {
             try
             {
+                if (s.SliderText==null || s.SliderSubText==null )
+                {
+                    TempData["edit_hata"] = "Tüm alanları doldurun...";
+                    return View(s);
+                }
+
                 Slayder _slayder = new Slayder();
                 if (file != null && file.ContentLength > 0)
                 {
@@ -266,6 +273,12 @@ namespace AloStorPerdeYikama_v2.Controllers
         {
             try
             {
+                if (s.title == null || s.baslik == null || s.alt_baslik == null)
+                {
+                    TempData["edit_hata"] = "Tüm alanları doldurun...";
+                    return View(s);
+                }
+
                 Galery _galery = new Galery();
                 if (file != null && file.ContentLength > 0)
                 {
@@ -401,6 +414,12 @@ namespace AloStorPerdeYikama_v2.Controllers
         {
             try
             {
+                if (s.Title == null || s.TitleSub == null)
+                {
+                    TempData["edit_hata"] = "Tüm alanları doldurun...";
+                    return View(s);
+                }
+
                 HizmetTuru _hizmet = new HizmetTuru();
                 if (file != null && file.ContentLength > 0)
                 {
@@ -432,6 +451,15 @@ namespace AloStorPerdeYikama_v2.Controllers
                 throw new Exception("Hata oluştu");
             }
 
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Clear();
+            Session.RemoveAll();
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

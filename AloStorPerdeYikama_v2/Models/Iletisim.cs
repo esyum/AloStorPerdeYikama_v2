@@ -18,7 +18,6 @@ namespace AloStorPerdeYikama_v2.Models
             StringLength(40)]
         public string name { get; set; }
 
-
         [Display(Name = "Eposta"),
             StringLength(50),
             Required,
