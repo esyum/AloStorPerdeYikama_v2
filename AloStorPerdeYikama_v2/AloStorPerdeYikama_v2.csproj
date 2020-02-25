@@ -822,6 +822,7 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserAuthorize.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -831,6 +832,7 @@
     <Compile Include="Models\Iletisim.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Slayder.cs" />
+    <Compile Include="Models\tblFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -853,6 +855,7 @@
     <Content Include="Views\Shared\_Partialiletisim.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Admin\MyIletisim.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
