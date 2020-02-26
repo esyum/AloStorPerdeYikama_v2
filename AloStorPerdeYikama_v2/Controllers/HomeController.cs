@@ -17,13 +17,11 @@ namespace AloStorPerdeYikama_v2.Controllers
         public ActionResult Index()
         {
 AnaSayfaDTO obj = new AnaSayfaDTO();
-            obj.DTO_galery = db.galery.OrderByDescending(x => x.OlusturmaTarihi).ToList();
-            obj.DTO_slider = db.slayder.OrderByDescending(x => x.OlusturmaTarihi).ToList();
+            obj.DTO_galery = db.galery.OrderByDescending(x => x.OlusturmaTarihi).Take(12).ToList();
+            obj.DTO_slider = db.slayder.OrderByDescending(x => x.OlusturmaTarihi).Take(3).ToList();
             obj.DTO_galery_tur = db.galery_tur.ToList();
             obj.DTO_Hizmet_Turu = db.hizmet_turu.ToList();
             obj.DTO_iletisim = new Iletisim();
-            //List<Slayder> slayt = db.slayder.ToList();
-
             return View("Index",obj);
         }
 
@@ -61,13 +59,6 @@ AnaSayfaDTO obj = new AnaSayfaDTO();
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            //List<Galery> _galery = db.galery.Where(x => x.ID == ID).ToList();
-
-            //if (_galery == null)
-            //{
-            //    List<Galery> _galeryAll = db.galery.ToList();
-            //    return PartialView("_PartialGallery", _galeryAll);
-            //}
             TempData["_filterName"] = ID;
 
             return RedirectToAction("Index");

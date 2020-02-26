@@ -64,7 +64,7 @@
                                 }
                                 else
                                 {
-                                <img src="data:image/png;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:100%" class="card-img" alt="hizmet türleri">
+                                <img src="data:image/png;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:150px" class="card-img" alt="hizmet türleri">
                                 }
                         </div>
 
@@ -111,35 +111,17 @@
 </div>
 
 <div class="container-fluid">
-    @*<div class="row">
-        <div class="col-12 text-center">
-            @Html.Action("GaleryTurleri", "Home")
-        </div>*@
-    @*<div id="myBtnContainer">
-            <button class="btn1 active" onclick="filterSelection('all')"> Show all</button>
-            <button class="btn1" onclick="filterSelection('1')"> Nature</button>
-            <button class="btn1" onclick="filterSelection('2')"> Cars</button>
-            <button class="btn1" onclick="filterSelection('3')"> People</button>
-        </div>*@
+
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
                 <div id="myBtnContainer ">
-                    @*<div class="btn-group btn-group-toggle" data-toggle="buttons">*@
-                        @*<label class="btn btn-primary active">
-                            <input type="radio" name="options" id="option1" onclick="filterSelection('all')" autocomplete="off" checked> Hepsi
-                        </label>*@
-
                         <button type="button" class="btn btn-info" onclick="filterSelection('all')" checked> Hepsi</button>
 
                         @foreach (var item in Model.DTO_galery_tur)
                         {
                         <button type="button" class="btn btn-info" onclick="filterSelection('@item.tur')" > @item.tur</button>
-                        @*<label class="btn btn-primary">
-                            <input type="radio" name="options" id="option2" onclick="filterSelection('@item.tur')" autocomplete="off"> @item.tur
-                        </label>*@
                         }
-                    @*</div>*@
                 </div>
             </div>
         </div>

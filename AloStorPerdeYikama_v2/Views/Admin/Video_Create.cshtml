@@ -24,16 +24,14 @@
                             @Html.AntiForgeryToken()
 
                             <div class="form-horizontal">
-                                <h4>Video</h4>
+                                <h4>Video (50 MB dan küçük video dosyası yükleyebilirsiniz...)</h4>
                                 <hr />
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                                 <div class="form-group">
                                     <input type="file" name="postedFile" />
                                 </div>
-                                @*<div class="form-group">
-                                    <input type="submit" id="btnUpload" value="Upload" />
-                                </div>*@
+
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
                                         <input type="submit" id="btnUpload"  value="Kaydet" class="btn btn-default" />

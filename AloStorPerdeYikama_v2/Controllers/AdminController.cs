@@ -475,6 +475,10 @@ namespace AloStorPerdeYikama_v2.Controllers
         [HttpPost]
         public ActionResult Video_Create(HttpPostedFileBase postedFile)
         {
+            if (postedFile==null)
+            {
+                return View();
+            }
             byte[] bytes;
             using (BinaryReader br = new BinaryReader(postedFile.InputStream))
             {
