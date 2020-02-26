@@ -461,5 +461,66 @@ namespace AloStorPerdeYikama_v2.Controllers
             Session.Abandon();
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult MyVideo()
+        {
+            return View(db.video.Where(p => p.ContentType == "video/mp4").ToList());
+        }
+
+        public ActionResult Video_Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Video_Create(HttpPostedFileBase postedFile)
+        {
+            byte[] bytes;
+            using (BinaryReader br = new BinaryReader(postedFile.InputStream))
+            {
+                bytes = br.ReadBytes(postedFile.ContentLength);
+            }
+
+            db.video.Add(new Video
+            {
+                Name = Path.GetFileName(postedFile.FileName),
+                ContentType = postedFile.ContentType,
+                Data = bytes,
+                OlusturmaTarihi=DateTime.Now
+            });
+            db.SaveChanges();
+            return RedirectToAction("MyVideo");
+        }
+
+        [HttpGet]
+        public FileResult Video_DownloadFile(int? fileId)
+        {
+            Video file = db.video.ToList().Find(p => p.ID == fileId.Value);
+            return File(file.Data, file.ContentType, file.Name);
+        }
+
+        public ActionResult Video_Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Video _tblFile = db.video.Find(id);
+            if (_tblFile == null)
+            {
+                return HttpNotFound();
+            }
+            return View(_tblFile);
+        }
+
+        [HttpPost, ActionName("Video_Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed_Video(int id)
+        {
+            Video _tblFile = db.video.Find(id);
+            db.video.Remove(_tblFile);
+            db.SaveChanges();
+            return RedirectToAction("MyVideo");
+        }
     }
 }

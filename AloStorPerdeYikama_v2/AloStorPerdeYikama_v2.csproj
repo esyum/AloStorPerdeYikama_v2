@@ -832,7 +832,7 @@
     <Compile Include="Models\Iletisim.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Slayder.cs" />
-    <Compile Include="Models\tblFile.cs" />
+    <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -856,6 +856,9 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Admin\MyIletisim.cshtml" />
     <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Admin\MyVideo.cshtml" />
+    <Content Include="Views\Admin\Video_Create.cshtml" />
+    <Content Include="Views\Admin\Video_Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

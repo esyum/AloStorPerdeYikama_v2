@@ -1,0 +1,70 @@
+﻿@model AloStorPerdeYikama_v2.Models.Video
+
+@{
+    ViewBag.Title = "Video Sil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="content">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <h4 class="card-title">Kayıt Sil</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <h3>İlgili kaydı silmek istiyor musunuz?</h3>
+                        <div>
+                            <hr />
+
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Data)
+                                </dt>
+
+                                <dd>
+                                    <video id="VideoPlayer" src='@Url.Action("Video_DownloadFile", "Admin", new {fileId = Model.ID})' controls="true"
+                                           width="250" height="250" loop="true" />
+
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.ContentType)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.ContentType)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Name)
+                                </dd>
+
+                            </dl>
+
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Sil" class="btn btn-default" /> |
+                                    @Html.ActionLink("Geri Dön", "MyVideo")
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

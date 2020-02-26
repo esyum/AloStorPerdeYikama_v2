@@ -1,0 +1,53 @@
+﻿@model AloStorPerdeYikama_v2.Models.Video
+
+@{
+    ViewBag.Title = "Video Ekleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="content">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <h4 class="card-title">Yeni Kayıt</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+
+                        @using (Html.BeginForm("Video_Create", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                <h4>Video</h4>
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="form-group">
+                                    <input type="file" name="postedFile" />
+                                </div>
+                                @*<div class="form-group">
+                                    <input type="submit" id="btnUpload" value="Upload" />
+                                </div>*@
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" id="btnUpload"  value="Kaydet" class="btn btn-default" />
+                                        @Html.ActionLink("Geri Dön", "MyVideo")
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

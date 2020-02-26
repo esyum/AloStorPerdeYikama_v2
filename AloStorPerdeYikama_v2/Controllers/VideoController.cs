@@ -16,7 +16,7 @@ namespace AloStorPerdeYikama_v2.Controllers
         public ActionResult Index()
         {
            
-            return View(db.TblFile.Where(p=>p.ContentType=="video/mp4").ToList());
+            return View(db.video.Where(p=>p.ContentType=="video/mp4").ToList());
         }
 
         [HttpPost]
@@ -28,7 +28,7 @@ namespace AloStorPerdeYikama_v2.Controllers
                 bytes = br.ReadBytes(postedFile.ContentLength);
             }
             
-            db.TblFile.Add(new tblFile
+            db.video.Add(new Video
             {
                 Name = Path.GetFileName(postedFile.FileName),
                 ContentType = postedFile.ContentType,
@@ -42,7 +42,7 @@ namespace AloStorPerdeYikama_v2.Controllers
         public FileResult DownloadFile(int? fileId)
         {
 
-            tblFile file = db.TblFile.ToList().Find(p => p.ID == fileId.Value);
+            Video file = db.video.ToList().Find(p => p.ID == fileId.Value);
             return File(file.Data, file.ContentType, file.Name);
         }
     }
