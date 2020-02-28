@@ -1,5 +1,6 @@
 ﻿using AloStorPerdeYikama_v2.Context;
 using AloStorPerdeYikama_v2.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,6 +13,9 @@ using System.Web.Security;
 
 namespace AloStorPerdeYikama_v2.Controllers
 {
+    //SET GLOBAL max_allowed_packet=1024*1024*1024; 
+    //mysql de dosya boyut sıkıntısını aşmak için bu işlemi yapmamız gerekmektedir. MYSQL de.
+
     [UserAuthorize]
     public class AdminController : Controller
     {
@@ -22,7 +26,7 @@ namespace AloStorPerdeYikama_v2.Controllers
             return View();
         }
 
-        public ActionResult MyIletisim ()
+        public ActionResult MyIletisim()
         {
             List<Iletisim> _iletisim = db.iletisim.OrderByDescending(x => x.OlusturmaTarihi).ToList();
             return View(_iletisim);
@@ -30,7 +34,7 @@ namespace AloStorPerdeYikama_v2.Controllers
 
         public ActionResult MySlayder()
         {
-            List<Slayder> _slayder = db.slayder.OrderByDescending(x=>x.OlusturmaTarihi).ToList();
+            List<Slayder> _slayder = db.slayder.OrderByDescending(x => x.OlusturmaTarihi).ToList();
             return View(_slayder);
         }
 
@@ -102,7 +106,7 @@ namespace AloStorPerdeYikama_v2.Controllers
         {
             try
             {
-                if (s.SliderText==null || s.SliderSubText==null )
+                if (s.SliderText == null || s.SliderSubText == null)
                 {
                     TempData["edit_hata"] = "Tüm alanları doldurun...";
                     return View(s);
@@ -126,7 +130,7 @@ namespace AloStorPerdeYikama_v2.Controllers
                 _slayder.OlusturmaTarihi = DateTime.Now;
 
                 db.Entry(_slayder).State = EntityState.Modified;
-                
+
                 if (file == null)
                     db.Entry(_slayder).Property(m => m.SliderFoto).IsModified = false;
                 db.SaveChanges();
@@ -475,25 +479,36 @@ namespace AloStorPerdeYikama_v2.Controllers
         [HttpPost]
         public ActionResult Video_Create(HttpPostedFileBase postedFile)
         {
-            if (postedFile==null)
+            try
             {
-                return View();
+                if (postedFile == null)
+                {
+                    return View();
+                }
+
+                byte[] bytes;
+                //using (BinaryReader br = new BinaryReader(postedFile.InputStream))
+                using (BinaryReader br = new BinaryReader(postedFile.InputStream))
+                {
+                    bytes = br.ReadBytes(postedFile.ContentLength);
+                }
+
+                db.video.Add(new Video
+                {
+                    Name = Path.GetFileName(postedFile.FileName),
+                    ContentType = postedFile.ContentType,
+                    Data = bytes,
+                    OlusturmaTarihi = DateTime.Now
+                });
+                db.SaveChanges();
+                return RedirectToAction("MyVideo");
             }
-            byte[] bytes;
-            using (BinaryReader br = new BinaryReader(postedFile.InputStream))
+            catch (Exception)
             {
-                bytes = br.ReadBytes(postedFile.ContentLength);
+
+                throw new Exception("Dosya boyutu aşıldı") ;
             }
 
-            db.video.Add(new Video
-            {
-                Name = Path.GetFileName(postedFile.FileName),
-                ContentType = postedFile.ContentType,
-                Data = bytes,
-                OlusturmaTarihi=DateTime.Now
-            });
-            db.SaveChanges();
-            return RedirectToAction("MyVideo");
         }
 
         [HttpGet]

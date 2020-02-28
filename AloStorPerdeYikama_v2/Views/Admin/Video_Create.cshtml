@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
 <div class="content">
     <div class="page-inner">
         <div class="row">
@@ -18,13 +17,12 @@
                     </div>
                     <div class="card-body">
 
-
                         @using (Html.BeginForm("Video_Create", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {
                             @Html.AntiForgeryToken()
 
                             <div class="form-horizontal">
-                                <h4>Video (50 MB dan küçük video dosyası yükleyebilirsiniz...)</h4>
+                                <h4>Video (20 MB dan küçük video dosyası yükleyebilirsiniz...)</h4>
                                 <hr />
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
