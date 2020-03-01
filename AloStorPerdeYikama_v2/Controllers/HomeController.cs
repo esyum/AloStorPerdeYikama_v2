@@ -20,7 +20,7 @@ AnaSayfaDTO obj = new AnaSayfaDTO();
             obj.DTO_galery = db.galery.OrderByDescending(x => x.OlusturmaTarihi).Take(12).ToList();
             obj.DTO_slider = db.slayder.OrderByDescending(x => x.OlusturmaTarihi).Take(3).ToList();
             obj.DTO_galery_tur = db.galery_tur.ToList();
-            obj.DTO_Hizmet_Turu = db.hizmet_turu.ToList();
+            obj.DTO_Hizmet_Turu = db.hizmet_turu.OrderByDescending(x=>x.OlusturmaTarihi).Take(7).ToList();
             obj.DTO_iletisim = new Iletisim();
             return View("Index",obj);
         }

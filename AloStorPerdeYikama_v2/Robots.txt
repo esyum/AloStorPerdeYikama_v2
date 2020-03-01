@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /Admin
+
+http://www.alostorperdeyikama.com/sitemap.xml

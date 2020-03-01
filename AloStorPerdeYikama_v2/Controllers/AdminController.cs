@@ -524,20 +524,20 @@ namespace AloStorPerdeYikama_v2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Video _tblFile = db.video.Find(id);
-            if (_tblFile == null)
+            Video vd = db.video.Find(id);
+            if (vd == null)
             {
                 return HttpNotFound();
             }
-            return View(_tblFile);
+            return View(vd);
         }
 
         [HttpPost, ActionName("Video_Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed_Video(int id)
         {
-            Video _tblFile = db.video.Find(id);
-            db.video.Remove(_tblFile);
+            Video vd = db.video.Find(id);
+            db.video.Remove(vd);
             db.SaveChanges();
             return RedirectToAction("MyVideo");
         }
