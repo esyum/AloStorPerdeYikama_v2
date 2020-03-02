@@ -20,8 +20,9 @@ namespace AloStorPerdeYikama_v2.Models
         [StringLength(200),DisplayName("Dosya Turu")]
         public string ContentType { get; set; }
 
-        [DisplayName("Video Data")]
-        public byte[] Data { get; set; }
+        [StringLength(250),DisplayName("Video Data")]
+        public string Data { get; set; }
+        //public byte[] Data { get; set; }
 
         [Display(Name = "Oluşturulma Tarihi")]
         public DateTime OlusturmaTarihi { get; set; }

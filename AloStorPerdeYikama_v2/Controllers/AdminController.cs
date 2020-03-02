@@ -476,6 +476,42 @@ namespace AloStorPerdeYikama_v2.Controllers
             return View();
         }
 
+        //VİDEOYU database e kaydetme yöntemi
+        //[HttpPost]
+        //public ActionResult Video_Create(HttpPostedFileBase postedFile)
+        //{
+        //    try
+        //    {
+        //        if (postedFile == null)
+        //        {
+        //            return View();
+        //        }
+
+        //        byte[] bytes;
+        //        //using (BinaryReader br = new BinaryReader(postedFile.InputStream))
+        //        using (BinaryReader br = new BinaryReader(postedFile.InputStream))
+        //        {
+        //            bytes = br.ReadBytes(postedFile.ContentLength);
+        //        }
+
+        //        db.video.Add(new Video
+        //        {
+        //            Name = Path.GetFileName(postedFile.FileName),
+        //            ContentType = postedFile.ContentType,
+        //            Data = bytes,
+        //            OlusturmaTarihi = DateTime.Now
+        //        });
+        //        db.SaveChanges();
+        //        return RedirectToAction("MyVideo");
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw new Exception("Dosya boyutu aşıldı") ;
+        //    }
+
+        //}
+
         [HttpPost]
         public ActionResult Video_Create(HttpPostedFileBase postedFile)
         {
@@ -486,30 +522,34 @@ namespace AloStorPerdeYikama_v2.Controllers
                     return View();
                 }
 
-                byte[] bytes;
-                //using (BinaryReader br = new BinaryReader(postedFile.InputStream))
-                using (BinaryReader br = new BinaryReader(postedFile.InputStream))
+                if (postedFile != null && postedFile.ContentLength > 0)
                 {
-                    bytes = br.ReadBytes(postedFile.ContentLength);
+                    //İLGİLİ DOSYA KLASÖRE KAYDEDİLİR
+                    var path = Path.Combine(Server.MapPath("~/Content/video/"), postedFile.FileName);
+                    postedFile.SaveAs(path);
+
+                    db.video.Add(new Video
+                    {
+                        Name = Path.GetFileName(postedFile.FileName),
+                        ContentType = postedFile.ContentType,
+                        Data = "~/Content/video/"+ Path.GetFileName(postedFile.FileName),
+                        OlusturmaTarihi = DateTime.Now
+                    });
+                    db.SaveChanges();
+                    return RedirectToAction("MyVideo");
                 }
 
-                db.video.Add(new Video
-                {
-                    Name = Path.GetFileName(postedFile.FileName),
-                    ContentType = postedFile.ContentType,
-                    Data = bytes,
-                    OlusturmaTarihi = DateTime.Now
-                });
-                db.SaveChanges();
                 return RedirectToAction("MyVideo");
-            }
+
+                }
             catch (Exception)
             {
 
-                throw new Exception("Dosya boyutu aşıldı") ;
+                throw new Exception("Dosya boyutu aşıldı");
             }
 
         }
+
 
         [HttpGet]
         public FileResult Video_DownloadFile(int? fileId)
